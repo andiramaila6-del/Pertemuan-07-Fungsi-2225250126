@@ -2,9 +2,9 @@
 
 ## Identitas Mahasiswa
 
-- **Nama:** Indah Palupi Kusumaningrum
-- **NIM:** 2225250212
-- **Kelas:** 3F
+- **Nama:** Maila Andira Putri
+- **NIM:** 2225250126
+- **Kelas:** 3A
 
 ## Deskripsi
 
