@@ -1,131 +1,252 @@
-Pertemuan 07 Fungsi Python
+# Pertemuan 7 — Fungsi, Parameter, Return Value, dan Scope dalam Python
 
-Nama: Maila Andira Putri
-NIM: 2225250126
-Kelas: 3A
+## Identitas Mahasiswa
 
-1. Tujuan
+- **Nama:** Indah Palupi Kusumaningrum
+- **NIM:** 2225250212
+- **Kelas:** 3F
 
-Praktikum ini bertujuan untuk memahami penggunaan fungsi, parameter, argumen, return value, dan scope variabel dalam Python. Melalui praktikum ini, program dibagi menjadi beberapa fungsi agar setiap bagian memiliki tugas yang jelas. Selain itu, praktikum ini melatih penggunaan perulangan, seleksi kondisi, pengujian program, serta dokumentasi menggunakan Git dan GitHub.
+## Deskripsi
 
-2. Cara Menjalankan
+Repository ini berisi hasil praktikum Algoritma dan Pemrograman Pertemuan 7 tentang fungsi, parameter, nilai balik (*return value*), dan ruang lingkup variabel (*scope*) dalam Python.
 
-Program dibuat menggunakan Visual Studio Code dengan bahasa pemrograman Python 3.
+Praktikum dilakukan menggunakan Visual Studio Code (VS Code). Kegiatan meliputi pembuatan fungsi, penggunaan parameter, pengembalian nilai, perulangan, pengolahan data sederhana, serta demonstrasi variabel lokal dan global.
 
-Langkah-langkah menjalankan program:
+## Tujuan Praktikum
 
-1. Membuka folder proyek Pertemuan 07 di VS Code.
-2. Memastikan Python sudah terpasang.
-3. Membuka file Python yang akan dijalankan.
-4. Membuka terminal melalui menu Terminal > New Terminal.
-5. Menjalankan program menggunakan perintah berikut.
+1. Memahami cara mendefinisikan dan memanggil fungsi dalam Python.
+2. Memahami penggunaan parameter dan argumen.
+3. Memahami penggunaan `return` untuk mengembalikan nilai dari fungsi.
+4. Menerapkan fungsi untuk menyelesaikan permasalahan sederhana.
+5. Memahami perbedaan variabel lokal dan variabel di luar fungsi.
+6. Menguji program menggunakan beberapa test case.
+7. Mengelola dan mengumpulkan hasil praktikum menggunakan GitHub.
 
-python Praktik/utilitas_matematika.py
+## Struktur Folder
 
-6. Memilih operasi matematika melalui menu yang ditampilkan.
-7. Memasukkan nilai sesuai permintaan program dan memeriksa hasilnya.
-
-3. Struktur Folder
-
-Struktur folder proyek yang digunakan adalah sebagai berikut.
-
-Pertemuan-07-Fungsi-2225250126/
-├── .gitignore
-├── README.md
+```text
+pertemuan-07-fungsi-2225250212/
 ├── latihan/
 │   ├── 01_salam.py
 │   ├── 02_luas_persegi_panjang.py
 │   ├── 03_jumlah_n.py
 │   ├── 04_statistik_sederhana.py
 │   └── 05_scope.py
-└── praktik/
-    └── utilitas_matematika.py
+├── praktik/
+│   └── utilitas_matematika.py
+├── .gitignore
+└── README.md
+```
 
-Folder latihan berisi lima program untuk mempelajari fungsi salam, luas persegi panjang, jumlah bilangan, statistik sederhana, dan scope variabel. Folder praktik berisi program utilitas matematika modular yang menggabungkan beberapa fungsi dalam satu program berbasis menu.
+## Latihan
 
-4. Struktur Fungsi
+### 1. Fungsi Salam
 
-4.1 Fungsi luas_persegi_panjang(p, l)
+File: `latihan/01_salam.py`
 
-Fungsi ini digunakan untuk menghitung luas persegi panjang dengan mengalikan panjang dan lebar.
+Latihan ini menggunakan fungsi `salam()` dengan dua parameter, yaitu nama dan kelas.
 
-- Parameter: "p" sebagai panjang dan "l" sebagai lebar.
-- Proses: menghitung "p * l".
-- Return value: hasil perkalian panjang dan lebar.
+Fungsi menampilkan pesan sapaan serta informasi kelas untuk setiap orang yang dipanggil.
 
-4.2 Fungsi luas_segitiga(a, t)
+Contoh pemanggilan:
 
-Fungsi ini digunakan untuk menghitung luas segitiga.
+```python
+salam("Alya", "2A")
+salam("Bima", "2B")
+```
 
-- Parameter: "a" sebagai alas dan "t" sebagai tinggi.
-- Proses: menghitung "0.5 * a * t".
-- Return value: hasil perhitungan luas segitiga.
+Output yang diharapkan:
 
-4.3 Fungsi jumlah_n(n)
+```text
+Halo, Alya. Selamat belajar Python!
+Kelas: 2A
+Halo, Bima. Selamat belajar Python!
+Kelas: 2B
+```
 
-Fungsi ini digunakan untuk menghitung jumlah bilangan dari 1 sampai n.
+**Konsep yang dipelajari:** fungsi, parameter, argumen, dan pemanggilan fungsi.
 
-- Parameter: "n" sebagai batas bilangan.
-- Proses: menggunakan perulangan "for" untuk menjumlahkan bilangan dari 1 sampai n.
-- Return value: jumlah seluruh bilangan yang dihitung.
+### 2. Fungsi Luas Persegi Panjang
 
-4.4 Fungsi faktorial(n)
+File: `latihan/02_luas_persegi_panjang.py`
 
-Fungsi ini digunakan untuk menghitung faktorial suatu bilangan bulat nonnegatif.
+Program menghitung luas persegi panjang menggunakan fungsi `luas_persegi_panjang(p, l)`.
 
-- Parameter: "n" sebagai bilangan yang akan dihitung faktorialnya.
-- Proses: menggunakan perulangan untuk mengalikan bilangan dari 2 sampai n.
-- Return value: hasil faktorial. Untuk n = 0, hasilnya adalah 1.
+Rumus:
 
-4.5 Fungsi tampilkan_menu()
+Luas = panjang × lebar
 
-Fungsi ini digunakan untuk menampilkan daftar pilihan operasi matematika kepada pengguna. Fungsi ini tidak memerlukan parameter dan bertugas menampilkan menu sebelum pengguna memilih operasi.
+Fungsi menerima panjang dan lebar sebagai parameter, kemudian mengembalikan hasil perhitungan menggunakan `return`.
 
-4.6 Program Utama
+Test case:
 
-Program utama menggunakan perintah "input()" untuk menerima pilihan pengguna. Seleksi "if", "elif", dan "else" digunakan untuk menentukan fungsi yang dijalankan sesuai pilihan. Program juga menyediakan pilihan keluar agar pengguna dapat mengakhiri program.
+| Panjang | Lebar | Hasil yang diharapkan |
+|---:|---:|---:|
+| 8 | 5 | 40 |
+| 2.5 | 4 | 10.0 |
+| 0 | 7 | 0 |
 
-5. Hasil Pengujian
+**Konsep yang dipelajari:** parameter, operasi aritmetika, dan nilai balik fungsi.
 
-Pengujian dilakukan dengan membandingkan hasil yang diharapkan dengan hasil aktual dari program.
+### 3. Fungsi Jumlah 1 sampai n
 
-No.| Operasi| Input| Hasil yang Diharapkan| Hasil Aktual| Status
-1| Luas persegi panjang| p=8, l=5| 40| 40| Berhasil
-2| Luas segitiga| a=10, t=6| 30.0| 30.0| Berhasil
-3| Jumlah 1 sampai n| n=10| 55| 55| Berhasil
-4| Faktorial| n=5| 120| 120| Berhasil
-5| Faktorial| n=0| 1| 1| Berhasil
+File: `latihan/03_jumlah_n.py`
 
-Berdasarkan test case tersebut, program diharapkan menghasilkan keluaran sesuai perhitungan matematika. Pengujian dilakukan untuk memastikan bahwa setiap fungsi memberikan hasil yang benar, termasuk kasus khusus faktorial dengan input nol.
+Program menghitung jumlah seluruh bilangan bulat dari 1 sampai n menggunakan fungsi dan perulangan.
 
-6. Konsep yang Dipelajari
+Rumus pembanding:
 
-6.1 Fungsi
+`jumlah = n × (n + 1) / 2`
 
-Fungsi merupakan bagian program yang dibuat untuk menjalankan tugas tertentu. Penggunaan fungsi membantu mengurangi pengulangan kode dan membuat program lebih mudah dibaca.
+Test case:
 
-6.2 Parameter dan Argumen
+| Nilai n | Hasil yang diharapkan |
+|---:|---:|
+| 1 | 1 |
+| 5 | 15 |
+| 10 | 55 |
+| 100 | 5050 |
 
-Parameter merupakan variabel yang dituliskan pada definisi fungsi, sedangkan argumen merupakan nilai yang diberikan ketika fungsi dipanggil. Keduanya memungkinkan fungsi digunakan dengan data yang berbeda.
+Hasil perhitungan menggunakan perulangan dapat dibandingkan dengan hasil rumus untuk memastikan kebenaran program.
 
-6.3 Return Value
+**Konsep yang dipelajari:** fungsi, perulangan, akumulasi, dan pengujian hasil.
 
-Perintah "return" digunakan untuk mengembalikan hasil dari suatu fungsi. Hasil tersebut dapat disimpan dalam variabel atau digunakan dalam proses lain.
+### 4. Statistik Sederhana
 
-6.4 Scope Variabel
+File: `latihan/04_statistik_sederhana.py`
 
-Scope menentukan bagian program yang dapat mengakses suatu variabel. Variabel lokal dibuat di dalam fungsi dan digunakan untuk kebutuhan proses fungsi tersebut.
+Program mengolah sekumpulan data untuk mendapatkan nilai minimum, maksimum, dan rata-rata.
 
-6.5 Perulangan dan Seleksi
+Data pengujian:
 
-Perulangan "for" digunakan dalam fungsi jumlah_n dan faktorial. Sementara itu, seleksi kondisi digunakan untuk menjalankan operasi berdasarkan pilihan pengguna.
+```python
+data = [70, 80, 65, 90, 75]
+```
 
-7. Refleksi
+Hasil yang diharapkan:
 
-Setelah mempelajari fungsi dalam Python, saya memahami bahwa program dapat dibuat lebih terstruktur dengan membagi setiap proses ke dalam fungsi yang berbeda. Setiap fungsi memiliki tugas dan parameter masing-masing sehingga rumus tidak perlu ditulis berulang kali. Penggunaan "return" juga memungkinkan hasil perhitungan digunakan kembali oleh bagian program lain.
+- Nilai minimum: 65
+- Nilai maksimum: 90
+- Rata-rata: 76.0
 
-Melalui praktikum ini, saya juga mempelajari cara menggunakan perulangan untuk melakukan perhitungan berulang dan seleksi kondisi untuk membuat program berbasis menu. Pengujian dengan beberapa input membantu memastikan bahwa hasil perhitungan sudah sesuai dengan yang diharapkan. Dengan demikian, program menjadi lebih mudah dipahami, diuji, dan diperbaiki.
+Rata-rata diperoleh dengan membagi jumlah seluruh data dengan banyaknya data.
 
-8. Kesimpulan
+**Konsep yang dipelajari:** fungsi, list, pengolahan data, nilai minimum, nilai maksimum, dan rata-rata.
 
-Praktikum Pertemuan 07 memberikan pemahaman mengenai penggunaan fungsi, parameter, return value, dan scope variabel dalam Python. Program utilitas matematika menunjukkan bahwa beberapa operasi dapat dipisahkan menjadi fungsi-fungsi sederhana dan dipanggil melalui menu. Dengan struktur yang modular, kode menjadi lebih rapi, mudah digunakan kembali, dan lebih mudah diuji.
+### 5. Demonstrasi Scope
+
+File: `latihan/05_scope.py`
+
+Latihan ini menunjukkan perbedaan variabel yang berada di luar fungsi dan variabel yang digunakan di dalam fungsi.
+
+Contoh konsep:
+
+```python
+x = 10
+
+def demo(x):
+    y = x + 5
+    print("di dalam fungsi:", x, y)
+    return y
+
+hasil = demo(20)
+
+print("di luar fungsi:", x)
+print("hasil:", hasil)
+```
+
+Output yang diharapkan:
+
+```text
+di dalam fungsi: 20 25
+di luar fungsi: 10
+hasil: 25
+```
+
+**Konsep yang dipelajari:** parameter fungsi, variabel lokal, variabel di luar fungsi, dan `return`.
+
+## Praktik: Utilitas Matematika
+
+File: `praktik/utilitas_matematika.py`
+
+Program utilitas matematika menggabungkan beberapa fungsi ke dalam satu program berbasis menu.
+
+Fungsi yang dibuat meliputi:
+
+1. `luas_persegi_panjang(p, l)` untuk menghitung luas persegi panjang.
+2. `luas_segitiga(a, t)` untuk menghitung luas segitiga.
+3. `jumlah_n(n)` untuk menghitung jumlah bilangan dari 1 sampai n.
+4. `faktorial(n)` untuk menghitung faktorial suatu bilangan.
+5. `tampilkan_menu()` untuk menampilkan pilihan operasi.
+
+Program menggunakan menu agar pengguna dapat memilih operasi matematika yang ingin dijalankan. Program juga melakukan validasi input, termasuk memastikan nilai n tidak negatif untuk operasi jumlah dan faktorial.
+
+### Test Case Praktik
+
+| Fungsi | Input | Hasil yang diharapkan |
+|---|---|---:|
+| Luas persegi panjang | p = 8, l = 5 | 40 |
+| Luas segitiga | a = 10, t = 6 | 30.0 |
+| Jumlah 1 sampai n | n = 10 | 55 |
+| Faktorial | n = 5 | 120 |
+| Faktorial | n = 0 | 1 |
+
+## Cara Menjalankan Program
+
+Pastikan Python telah terpasang dan dapat dijalankan melalui terminal VS Code.
+
+### Menjalankan latihan
+
+Buka terminal pada folder utama proyek, lalu jalankan salah satu perintah berikut:
+
+```bash
+python latihan/01_salam.py
+```
+
+Untuk latihan lainnya:
+
+```bash
+python latihan/02_luas_persegi_panjang.py
+python latihan/03_jumlah_n.py
+python latihan/04_statistik_sederhana.py
+python latihan/05_scope.py
+```
+
+### Menjalankan program utilitas matematika
+
+```bash
+python praktik/utilitas_matematika.py
+```
+
+Jika perintah `python` tidak dikenali pada Windows, coba gunakan:
+
+```bash
+py latihan/01_salam.py
+```
+
+atau sesuaikan nama file dengan program yang ingin dijalankan.
+
+## Pengujian Program
+
+Pengujian dilakukan dengan menjalankan setiap file Python dan membandingkan hasil aktual dengan hasil yang diharapkan pada test case.
+
+Kriteria pengujian:
+
+- Fungsi menerima parameter sesuai kebutuhan.
+- Fungsi mengembalikan atau menampilkan hasil yang benar.
+- Perhitungan sesuai dengan rumus matematika.
+- Variabel lokal dan variabel di luar fungsi menunjukkan perilaku sesuai scope.
+- Program menangani input sesuai validasi yang diterapkan.
+
+## Kesimpulan
+
+Melalui praktikum Pertemuan 7, saya mempelajari penggunaan fungsi dalam Python, termasuk parameter, argumen, nilai balik dengan `return`, serta ruang lingkup variabel.
+
+Saya juga menerapkan fungsi untuk menyelesaikan beberapa permasalahan, seperti menghitung luas bangun datar, menjumlahkan bilangan, menghitung statistik sederhana, dan menghitung faktorial.
+
+Pengujian dengan beberapa test case membantu memastikan bahwa program menghasilkan keluaran sesuai dengan yang diharapkan.
+
+## Pengumpulan melalui GitHub
+
+Seluruh file praktikum disusun dalam satu repository dengan struktur folder yang telah ditentukan. File `README.md` digunakan untuk menjelaskan isi repository, tujuan praktikum, cara menjalankan program, dan hasil pengujian.
+*Repository GitHub:* [https://github.com/andiramaila6-del/Pertemuan-07-Fungsi-2225250126]
